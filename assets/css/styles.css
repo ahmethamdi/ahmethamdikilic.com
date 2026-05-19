@@ -2537,3 +2537,299 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   padding: 18px 32px;
 }
 
+
+/* =========================================================================
+   v4.0 — APPLE-STYLE PINNED SCROLL STORY
+   Sticky hero, 3D bag, scroll-locked scenes, mobile fallback
+   ========================================================================= */
+
+/* Lenis smooth scroll body */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
+
+/* Story container — drives the total scroll distance */
+.story {
+  position: relative;
+  /* total scroll length = 5 scenes × 100vh = 500vh */
+  height: 500vh;
+}
+
+/* Pinned stage — sticky, full viewport */
+.story-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* WebGL canvas — full viewport behind everything */
+.story-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.story-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* radial fade overlay so text stays readable */
+.story-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 50% 50%, transparent 0%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Scene text overlays — all positioned absolute, fade in/out via JS */
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 24px;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity .6s var(--ease);
+  pointer-events: none;
+}
+.scene.is-active { opacity: 1; pointer-events: auto; }
+
+.scene .eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin: 0 0 28px;
+  padding: 6px 14px;
+  border: 1px solid var(--lime);
+  background: rgba(197,255,74,0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.scene .eyebrow::before {
+  content: "";
+  width: 6px; height: 6px;
+  background: var(--lime);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--lime-glow);
+}
+
+.scene h1, .scene h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(56px, 11vw, 180px);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  margin: 0 0 32px;
+  max-width: 14ch;
+  color: var(--ink);
+}
+.scene h1 em, .scene h2 em {
+  color: var(--lime);
+  font-style: italic;
+}
+
+.scene p {
+  font-family: var(--sans);
+  font-size: clamp(16px, 1.3vw, 20px);
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 50ch;
+  margin: 0 0 20px;
+}
+
+.scene .meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.scene .meta-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.scene .meta-row span::before {
+  content: "";
+  width: 6px; height: 6px;
+  background: var(--lime);
+  display: inline-block;
+}
+
+.scene .big-number {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(180px, 32vw, 540px);
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+  color: var(--lime);
+  filter: drop-shadow(0 0 60px rgba(197,255,74,0.3));
+  margin: 0;
+}
+
+.scene .card-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+  max-width: 900px;
+}
+.scene .card-strip a {
+  padding: 10px 18px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.18);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: all .3s var(--ease);
+}
+.scene .card-strip a:hover {
+  background: var(--lime);
+  color: #000;
+  border-color: var(--lime);
+  box-shadow: 0 0 24px var(--lime-glow);
+}
+
+.scene .cta {
+  margin-top: 40px;
+  padding: 16px 36px;
+  background: var(--lime);
+  color: #000;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1.5px solid var(--lime);
+  transition: all .3s var(--ease);
+  pointer-events: auto;
+}
+.scene .cta:hover {
+  background: transparent;
+  color: var(--lime);
+  box-shadow: 0 0 30px var(--lime-glow);
+}
+
+/* Progress indicator — right side vertical bar */
+.story-progress {
+  position: fixed;
+  top: 50%;
+  right: 32px;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 240px;
+  background: rgba(255,255,255,0.08);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.story-progress .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--ink-dim);
+  border-radius: 50%;
+  margin-left: -3px;
+  transition: all .4s var(--ease);
+}
+.story-progress .dot.is-active {
+  background: var(--lime);
+  box-shadow: 0 0 10px var(--lime-glow);
+  transform: scale(1.4);
+}
+.story-progress .fill {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  background: var(--lime);
+  height: 0;
+  transition: height .15s linear;
+  box-shadow: 0 0 10px var(--lime-glow);
+}
+
+/* scroll cue at top of hero */
+.story-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 1;
+  transition: opacity .5s var(--ease);
+}
+.story-hint::after {
+  content: "↓";
+  color: var(--lime);
+  font-family: var(--sans);
+  font-size: 16px;
+  animation: arrowDrop 1.8s var(--ease) infinite;
+}
+.story.is-scrolled .story-hint { opacity: 0; }
+
+/* post-story content (after the pin breaks) */
+.story-after {
+  position: relative;
+  z-index: 5;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+/* Mobile fallback — drop the 3D + pin, show static scenes */
+@media (max-width: 879px) {
+  .story { height: auto; }
+  .story-stage { position: relative; height: auto; min-height: 100vh; padding: 60px 0; }
+  .scene { position: relative; inset: auto; opacity: 1; min-height: 80vh; padding: 80px 24px; pointer-events: auto; }
+  .scene h1, .scene h2 { font-size: clamp(40px, 12vw, 80px); }
+  .story-progress { display: none; }
+  .story-hint { display: none; }
+  .story-canvas { position: fixed; opacity: 0.5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story { height: auto; }
+  .story-stage { position: relative; height: auto; }
+  .scene { position: relative; inset: auto; opacity: 1; padding: 60px 24px; }
+  .story-canvas { display: none; }
+  .story-progress { display: none; }
+}
+

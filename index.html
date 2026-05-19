@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ahmet Hamdi Kilic — Senior Shopify Developer</title>
-    <meta name="description" content="Senior Shopify & E-Commerce Developer. Custom themes, Shopify apps, marketplace integrations. 34devs founder. Korschenbroich, DE.">
+    <meta name="description" content="Senior Shopify & E-Commerce Developer. Custom themes, Shopify apps, marketplace integrations. Founder of 34devs. Korschenbroich, DE.">
     <link rel="canonical" href="https://ahmethamdikilic.com/">
     <link rel="alternate" hreflang="tr" href="https://ahmethamdikilic.com/">
     <link rel="alternate" hreflang="en" href="https://ahmethamdikilic.com/en/">
@@ -13,7 +13,7 @@
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ahmet Hamdi Kilic — Senior Shopify Developer">
-    <meta property="og:description" content="Theme architecture, Shopify apps, marketplace integrations. Founder of 34devs.">
+    <meta property="og:description" content="Cinematic scroll story · 3D Shopify experience · 7 case studies · 12 production stores · Founder of 34devs.">
     <meta property="og:url" content="https://ahmethamdikilic.com/">
     <meta property="og:image" content="https://ahmethamdikilic.com/assets/img/projects/stores/garisar-desktop.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -38,14 +38,14 @@
         "email": "ahmethamdikilic@outlook.de",
         "address": { "@type": "PostalAddress", "addressLocality": "Korschenbroich", "addressCountry": "DE" },
         "sameAs": ["https://github.com/ahmethamdi", "https://www.linkedin.com/in/ahmet-hamdi-kilic"],
-        "knowsAbout": ["Shopify", "Liquid", "Shopify Apps", "Storefront API", "Admin API", "Plentymarkets", "Shopware", "Conversion Optimization"]
+        "knowsAbout": ["Shopify", "Liquid", "Shopify Apps", "Storefront API", "Admin API", "Plentymarkets", "Shopware"]
       }
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Içerige geç</a>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
 
-    <header class="site-header" data-header>
+    <header class="site-header">
       <div class="container">
         <a class="brand" href="/" aria-label="Ahmet Hamdi Kilic ana sayfa">
           <span class="brand-mark">A</span>
@@ -67,184 +67,189 @@
 
     <main id="main">
 
-      <!-- ============================================
-           HERO · EDITORIAL SPLIT
-           ============================================ -->
-      <section class="edt-hero">
-        <div class="edt-hero-body">
-          <div class="edt-hero-copy">
-            <div class="edt-eyebrow">
-              <span>Issue №01 · Spring 2026</span>
-              <span>● Available · Q3</span>
-            </div>
+      <!-- ================================================================
+           THE STORY · pinned hero + 5 scenes + 3D bag
+           Total scroll length = 500vh (5 × 100vh)
+           ================================================================ -->
+      <section class="story" data-story aria-label="Portfolio scroll story">
 
-            <h1 class="edt-title">
-              <span class="block">Storefronts</span>
-              <span class="block">that <em>ship</em></span>
-              <span class="block">&amp; <em>convert.</em></span>
-            </h1>
+        <!-- Pinned full-viewport stage -->
+        <div class="story-stage">
 
-            <p class="edt-tagline">
-              Ahmet Hamdi Kilic — Senior Shopify &amp; E-Commerce Developer based in Korschenbroich, Germany. Custom themes, Shopify apps, marketplace integrations. Founder of 34devs.
-            </p>
+          <!-- 3D Three.js canvas (renders behind everything) -->
+          <div class="story-canvas">
+            <canvas data-story-canvas></canvas>
+          </div>
 
-            <div class="edt-actions">
-              <a class="button button-primary" href="#work" data-magnetic>Projeleri gör ↗</a>
-              <a class="more" href="/contact.html">Bana yaz</a>
+          <!-- SCENE 01 — Identity -->
+          <div class="scene is-active" data-scene="01" data-scene-idx="0">
+            <span class="eyebrow">№01 · Senior Shopify Developer</span>
+            <h1>Storefronts<br>that <em>ship</em> &amp; <em>convert.</em></h1>
+            <p>Ahmet Hamdi Kilic — Korschenbroich, Germany. Custom themes, Shopify apps, marketplace integrations. Founder of 34devs.</p>
+          </div>
+
+          <!-- SCENE 02 — Founded 34devs -->
+          <div class="scene" data-scene="02" data-scene-idx="1">
+            <span class="eyebrow">№02 · Founded · 2024</span>
+            <h2>I built <em>my own</em><br>Shopify Plus agency.</h2>
+            <p>34devs — bespoke Shopify Plus services for ambitious brands. Custom theme, app, migration, performance.</p>
+            <div class="meta-row">
+              <span>2.1s avg load</span>
+              <span>A+ Shopify Score</span>
+              <span>2026 Partner</span>
             </div>
           </div>
 
-          <div class="edt-hero-media">
-            <picture>
-              <source srcset="/assets/img/projects/stores/garisar-desktop.webp" type="image/webp">
-              <img src="/assets/img/projects/stores/garisar-desktop.jpg" alt="Garisar — gourmet olive oil Shopify storefront, one of 14 themes delivered for EZ Commerce" width="1600" height="1000">
-            </picture>
-            <div class="edt-hero-tags">
-              <div>Featured · Garisar.com</div>
-              <div class="now">Live</div>
+          <!-- SCENE 03 — 7 production systems -->
+          <div class="scene" data-scene="03" data-scene-idx="2">
+            <span class="eyebrow">№03 · Production · 7 systems</span>
+            <h2>Seven systems,<br><em>shipped</em> in production.</h2>
+            <p>From Laravel-based dropshipping sync to checkout-extensibility delivery apps — built end-to-end, retry-stable, observable.</p>
+            <div class="card-strip">
+              <a href="/case-studies/34devs-agency.html">34devs Agency</a>
+              <a href="/case-studies/plentymarkets-dropshipping.html">Plentymarkets Sync</a>
+              <a href="/case-studies/mega-menu-builder.html">Mega Menu Builder</a>
+              <a href="/case-studies/etaly-delivery-date.html">ETAly · Delivery</a>
+              <a href="/case-studies/shopware-sync.html">Shopware Sync</a>
+              <a href="/case-studies/walmart-marketplace.html">Walmart Marketplace</a>
+              <a href="/case-studies/ezcommerce-themes.html">12 Themes</a>
             </div>
           </div>
+
+          <!-- SCENE 04 — 6 years -->
+          <div class="scene" data-scene="04" data-scene-idx="3">
+            <span class="eyebrow">№04 · Across six years</span>
+            <span class="big-number">6</span>
+            <h2 style="font-size: clamp(28px, 3vw, 44px); margin-top: 24px; max-width: 30ch;">Years of end-to-end<br><em>e-commerce engineering.</em></h2>
+            <div class="meta-row">
+              <span>18+ Shopify stores</span>
+              <span>4 custom apps</span>
+              <span>3 integrations</span>
+            </div>
+          </div>
+
+          <!-- SCENE 05 — CTA -->
+          <div class="scene" data-scene="05" data-scene-idx="4">
+            <span class="eyebrow">№05 · Available · Q3 2026</span>
+            <h2>Let's build the<br><em>next</em> one.</h2>
+            <p>Custom theme · Shopify app · Marketplace integration — gönder kısa bir brief, 24 saat içinde dönerim.</p>
+            <a class="cta" href="mailto:ahmethamdikilic@outlook.de?subject=Shopify%20Project">
+              ahmethamdikilic@outlook.de ↗
+            </a>
+          </div>
+
+          <!-- Scroll hint -->
+          <div class="story-hint">Scroll to begin</div>
         </div>
 
-        <div class="edt-hero-bar">
-          <div>Korschenbroich, DE</div>
-          <div class="scroll-cue">Scroll for the index</div>
-          <div>2026 · v3.0</div>
+        <!-- Progress indicator (right side dots) -->
+        <div class="story-progress" data-story-progress aria-hidden="true">
+          <div class="fill"></div>
+          <div class="dot is-active" data-progress-dot></div>
+          <div class="dot" data-progress-dot></div>
+          <div class="dot" data-progress-dot></div>
+          <div class="dot" data-progress-dot></div>
+          <div class="dot" data-progress-dot></div>
         </div>
       </section>
 
-      <!-- ============================================
-           MARQUEE — what I work on
-           ============================================ -->
-      <div class="edt-marquee" aria-hidden="true">
-        <div class="edt-marquee-track">
-          <span>Custom Shopify Themes</span>
-          <span>Shopify Apps</span>
-          <span>Marketplace Integrations</span>
-          <span>Liquid &amp; Checkout Extensibility</span>
-          <span>Custom Shopify Themes</span>
-          <span>Shopify Apps</span>
-          <span>Marketplace Integrations</span>
-          <span>Liquid &amp; Checkout Extensibility</span>
-        </div>
-      </div>
+      <!-- After the pin: traditional content sections -->
+      <div class="story-after">
 
-      <!-- ============================================
-           YEAR STAT BLOCK — editorial breathing room
-           ============================================ -->
-      <section class="edt-year">
-        <span class="num">6</span>
-        <span class="label">Years · End-to-end E-Commerce Engineering</span>
-
-        <div class="stat-row">
-          <div class="stat"><strong>18<em>+</em></strong><span>Shopify Stores</span></div>
-          <div class="stat"><strong>4</strong><span>Custom Shopify Apps</span></div>
-          <div class="stat"><strong>3</strong><span>Marketplace Integrations</span></div>
-          <div class="stat"><strong>1</strong><span>Founded Agency</span></div>
-        </div>
-      </section>
-
-      <!-- ============================================
-           FEATURED · 34devs (full-bleed)
-           ============================================ -->
-      <section class="edt-featured">
-        <div class="edt-featured-inner">
-          <div class="edt-featured-copy">
-            <div class="tag">N°00 · Founded</div>
-            <h2><em>34devs</em><br>my Shopify Plus agency.</h2>
-            <p>2024'te kurduğum bespoke agency. Shopify Plus seviyesinde custom theme, app, migration ve performance audit servisleri. Site'nin kendisi de bir çıktı: 2.1s yükleme, A+ score, 2026 Shopify Partner.</p>
-
-            <div class="stat-line">
-              <div><strong>2.1<em>s</em></strong><span>Avg load</span></div>
-              <div><strong>A<em>+</em></strong><span>Shopify Score</span></div>
-              <div><strong>2026</strong><span>Partner</span></div>
+        <!-- Featured project: 34devs visual -->
+        <section class="edt-featured">
+          <div class="edt-featured-inner">
+            <div class="edt-featured-copy">
+              <div class="tag">N°00 · Founded</div>
+              <h2><em>34devs</em><br>my Shopify Plus agency.</h2>
+              <p>2024'te kurduğum bespoke agency. Shopify Plus seviyesinde custom theme, app, migration ve performance audit servisleri. Site'nin kendisi de bir çıktı: 2.1s yükleme, A+ score, 2026 Shopify Partner.</p>
+              <div class="stat-line">
+                <div><strong>2.1<em>s</em></strong><span>Avg load</span></div>
+                <div><strong>A<em>+</em></strong><span>Shopify Score</span></div>
+                <div><strong>2026</strong><span>Partner</span></div>
+              </div>
+              <a class="button button-primary" href="/case-studies/34devs-agency.html" data-magnetic>Case study ↗</a>
             </div>
-
-            <a class="button button-primary" href="/case-studies/34devs-agency.html" data-magnetic>Case study ↗</a>
+            <a class="edt-featured-media" href="https://34devs.com" target="_blank" rel="noreferrer" aria-label="Visit 34devs.com">
+              <picture>
+                <source srcset="/assets/img/projects/34devs/hero-desktop.webp" type="image/webp">
+                <img src="/assets/img/projects/34devs/hero-desktop.jpg" alt="34devs.com — Shopify Plus agency homepage" width="1600" height="1000" loading="lazy">
+              </picture>
+            </a>
           </div>
+        </section>
 
-          <a class="edt-featured-media" href="https://34devs.com" target="_blank" rel="noreferrer" aria-label="Visit 34devs.com">
-            <picture>
-              <source srcset="/assets/img/projects/34devs/hero-desktop.webp" type="image/webp">
-              <img src="/assets/img/projects/34devs/hero-desktop.jpg" alt="34devs.com — Shopify Plus agency homepage" width="1600" height="1000" loading="lazy">
-            </picture>
-          </a>
-        </div>
-      </section>
-
-      <!-- ============================================
-           SELECTED WORK · editorial case index
-           ============================================ -->
-      <section class="edt-work" id="work">
-        <div class="edt-work-head">
-          <h2>Selected<br><em>work.</em></h2>
-          <div class="meta">
-            <strong>04</strong>
-            Recent case studies<br>
-            2023 — 2026
-          </div>
-        </div>
-
-        <a class="edt-case" href="/case-studies/plentymarkets-dropshipping.html">
-          <span class="edt-case-num">№01</span>
-          <div class="edt-case-text">
-            <h3 class="edt-case-title">Shopify ⇄ <em>Plentymarkets</em><br>Dropshipping Sync.</h3>
-            <p class="edt-case-sub">Vapor Handel GmbH · 2024 — now</p>
-            <div class="edt-case-tags">
-              <span class="lime">Production</span>
-              <span>Laravel</span>
-              <span>REST API</span>
-              <span>Custom CMS</span>
+        <!-- Selected work — editorial case index -->
+        <section class="edt-work" id="work">
+          <div class="edt-work-head">
+            <h2>Selected<br><em>work.</em></h2>
+            <div class="meta">
+              <strong>04</strong>
+              Recent case studies<br>
+              2023 — 2026
             </div>
           </div>
-          <div class="edt-case-media">
-            <div class="ascii-art-fill">
+
+          <a class="edt-case" href="/case-studies/plentymarkets-dropshipping.html">
+            <span class="edt-case-num">№01</span>
+            <div class="edt-case-text">
+              <h3 class="edt-case-title">Shopify ⇄ <em>Plentymarkets</em><br>Dropshipping Sync.</h3>
+              <p class="edt-case-sub">Vapor Handel GmbH · 2024 — now</p>
+              <div class="edt-case-tags">
+                <span class="lime">Production</span>
+                <span>Laravel</span>
+                <span>REST API</span>
+                <span>Custom CMS</span>
+              </div>
+            </div>
+            <div class="edt-case-media">
+              <div class="ascii-art-fill">
 <pre style="margin:0; font-size:11px; line-height:1.45;">  ┌──────── SHOPIFY ────────┐    ┌─── PLENTYMARKETS ───┐
   │ webhook   <span class="hi">▸▸▸</span>           │ ⇄ │ POST /orders        │
   │ stock     <span class="hi">◂◂◂</span>           │   │ GET  /items         │
   │ retry     <span class="hi">5×</span>            │   │ PUT  /stock         │
   └─────────────────────────┘    └─────────────────────┘
                 <span class="hi">elfbargermany</span></pre>
+              </div>
             </div>
-          </div>
-          <span class="edt-case-arrow">↗</span>
-        </a>
+            <span class="edt-case-arrow">↗</span>
+          </a>
 
-        <a class="edt-case" href="/case-studies/ezcommerce-themes.html">
-          <span class="edt-case-num">№02</span>
-          <div class="edt-case-text">
-            <h3 class="edt-case-title">12 Custom <em>Shopify</em> Themes<br>(Figma → Liquid).</h3>
-            <p class="edt-case-sub">EZ Commerce US · 2023</p>
-            <div class="edt-case-tags">
-              <span>Theme dev</span>
-              <span>Pixel-perfect</span>
-              <span>Online Store 2.0</span>
-              <span>CWV-tuned</span>
+          <a class="edt-case" href="/case-studies/ezcommerce-themes.html">
+            <span class="edt-case-num">№02</span>
+            <div class="edt-case-text">
+              <h3 class="edt-case-title">12 Custom <em>Shopify</em> Themes<br>(Figma → Liquid).</h3>
+              <p class="edt-case-sub">EZ Commerce US · 2023</p>
+              <div class="edt-case-tags">
+                <span>Theme dev</span>
+                <span>Pixel-perfect</span>
+                <span>Online Store 2.0</span>
+                <span>CWV-tuned</span>
+              </div>
             </div>
-          </div>
-          <div class="edt-case-media">
-            <picture>
-              <source srcset="/assets/img/projects/stores/bayelon-desktop.webp" type="image/webp">
-              <img src="/assets/img/projects/stores/bayelon-desktop.jpg" alt="Bayelon — one of 12 EZ Commerce themes" loading="lazy" width="1440" height="900">
-            </picture>
-          </div>
-          <span class="edt-case-arrow">↗</span>
-        </a>
+            <div class="edt-case-media">
+              <picture>
+                <source srcset="/assets/img/projects/stores/bayelon-desktop.webp" type="image/webp">
+                <img src="/assets/img/projects/stores/bayelon-desktop.jpg" alt="Bayelon — one of 12 EZ Commerce themes" loading="lazy" width="1440" height="900">
+              </picture>
+            </div>
+            <span class="edt-case-arrow">↗</span>
+          </a>
 
-        <a class="edt-case" href="/case-studies/mega-menu-builder.html">
-          <span class="edt-case-num">№03</span>
-          <div class="edt-case-text">
-            <h3 class="edt-case-title"><em>Mega Menu Builder</em><br>Shopify App.</h3>
-            <p class="edt-case-sub">Custom App · Theme App Extension</p>
-            <div class="edt-case-tags">
-              <span>App</span>
-              <span>Drag &amp; Drop</span>
-              <span>Polaris UI</span>
-              <span>Billing API</span>
+          <a class="edt-case" href="/case-studies/mega-menu-builder.html">
+            <span class="edt-case-num">№03</span>
+            <div class="edt-case-text">
+              <h3 class="edt-case-title"><em>Mega Menu Builder</em><br>Shopify App.</h3>
+              <p class="edt-case-sub">Custom App · Theme App Extension</p>
+              <div class="edt-case-tags">
+                <span>App</span>
+                <span>Drag &amp; Drop</span>
+                <span>Polaris UI</span>
+                <span>Billing API</span>
+              </div>
             </div>
-          </div>
-          <div class="edt-case-media">
-            <div class="ascii-art-fill">
+            <div class="edt-case-media">
+              <div class="ascii-art-fill">
 <pre style="margin:0; font-size:11px; line-height:1.45;">  ▼ MEGA MENU BUILDER
   ┌──────────────────────────┐
   │ <span class="hi">●</span> Collections             │
@@ -254,25 +259,25 @@
   │ <span class="hi">●</span> Mobile / desktop split  │
   └──────────────────────────┘
         theme app extension</pre>
+              </div>
             </div>
-          </div>
-          <span class="edt-case-arrow">↗</span>
-        </a>
+            <span class="edt-case-arrow">↗</span>
+          </a>
 
-        <a class="edt-case" href="/case-studies/etaly-delivery-date.html">
-          <span class="edt-case-num">№04</span>
-          <div class="edt-case-text">
-            <h3 class="edt-case-title"><em>ETAly</em><br>Delivery Date &amp; Shipping.</h3>
-            <p class="edt-case-sub">Public Shopify App · Checkout Extensibility</p>
-            <div class="edt-case-tags">
-              <span>App</span>
-              <span>Checkout UI Ext.</span>
-              <span>Multi-country</span>
-              <span>SaaS tiers</span>
+          <a class="edt-case" href="/case-studies/etaly-delivery-date.html">
+            <span class="edt-case-num">№04</span>
+            <div class="edt-case-text">
+              <h3 class="edt-case-title"><em>ETAly</em><br>Delivery Date &amp; Shipping.</h3>
+              <p class="edt-case-sub">Public Shopify App · Checkout Extensibility</p>
+              <div class="edt-case-tags">
+                <span>App</span>
+                <span>Checkout UI Ext.</span>
+                <span>Multi-country</span>
+                <span>SaaS tiers</span>
+              </div>
             </div>
-          </div>
-          <div class="edt-case-media">
-            <div class="ascii-art-fill">
+            <div class="edt-case-media">
+              <div class="ascii-art-fill">
 <pre style="margin:0; font-size:11px; line-height:1.45;">  ┌─────────────────────┐
   │  Order before       │
   │       <span class="hi">14:00</span>         │
@@ -281,28 +286,27 @@
   │  DHL · 2-3 days     │
   └─────────────────────┘
        <span class="hi">conversion · live</span></pre>
+              </div>
             </div>
-          </div>
-          <span class="edt-case-arrow">↗</span>
-        </a>
-      </section>
+            <span class="edt-case-arrow">↗</span>
+          </a>
+        </section>
 
-      <!-- bottom: "view all" link inside same section -->
-      <div style="border-top: 1px solid var(--border); padding: 50px clamp(24px, 5vw, 80px); display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);">
-        <span>+ 3 more case studies · 12 stores</span>
-        <a href="/work.html" style="color: var(--lime); border-bottom: 1px solid var(--lime); padding-bottom: 4px;">View full index ↗</a>
+        <div style="border-top: 1px solid var(--border); padding: 50px clamp(24px, 5vw, 80px); display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);">
+          <span>+ 3 more case studies · 12 stores</span>
+          <a href="/work.html" style="color: var(--lime); border-bottom: 1px solid var(--lime); padding-bottom: 4px;">View full index ↗</a>
+        </div>
+
+        <!-- Closing CTA -->
+        <section class="edt-close">
+          <span class="small">N°05 · Get in touch</span>
+          <h2>Let's build the <em>next</em> one.</h2>
+          <a class="button button-primary" href="mailto:ahmethamdikilic@outlook.de?subject=Shopify%20Project" data-magnetic>
+            ahmethamdikilic@outlook.de ↗
+          </a>
+        </section>
+
       </div>
-
-      <!-- ============================================
-           CLOSING CTA
-           ============================================ -->
-      <section class="edt-close">
-        <span class="small">N°05 · Get in touch</span>
-        <h2>Let's build the <em>next</em> one.</h2>
-        <a class="button button-primary" href="mailto:ahmethamdikilic@outlook.de?subject=Shopify%20Project" data-magnetic>
-          ahmethamdikilic@outlook.de ↗
-        </a>
-      </section>
 
     </main>
 
@@ -318,10 +322,14 @@
       </div>
       <div class="container footer-bottom">
         <span>© 2026 Ahmet Hamdi Kilic · 34devs</span>
-        <span>Built with Liquid in mind · v3.0</span>
+        <span>Built with Liquid in mind · v4.0 · 3D scroll story</span>
       </div>
     </footer>
 
+    <!-- Apple-style scroll story scripts -->
+    <script src="/assets/js/vendor/lenis.min.js"></script>
+    <script type="module" src="/assets/js/story.js"></script>
+    <!-- Existing utilities (magnetic, nav, reveal) -->
     <script src="/assets/js/main.js" defer></script>
   </body>
 </html>
