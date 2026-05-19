@@ -1,0 +1,49 @@
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors / AI tooling
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+.aider*
+.claude/
+
+# Node / build
+node_modules/
+dist/
+build/
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Local dev artifacts
+/tmp/
+*.tmp
+.serv.log
+*.local
+
+# Generated PDFs and screenshots (keep these out of source)
+*.pdf
+.render-*.png
+screenshot-*.mjs
+
+# Misc
+.history/
+.parcel-cache/
