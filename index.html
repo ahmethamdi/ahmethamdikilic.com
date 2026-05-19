@@ -144,8 +144,8 @@
             All on the same Liquid + API foundation.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Projeleri gör ↗</a>
-            <a class="button button-secondary" href="/contact.html">Bana yaz</a>
+            <a class="button button-primary" href="#projects" data-magnetic>Projeleri gör ↗</a>
+            <a class="button button-secondary" href="/contact.html" data-magnetic>Bana yaz</a>
           </div>
           <div class="hero-specs" aria-label="Profil özeti">
             <span><strong>6+</strong> yıl e-commerce</span>
@@ -274,161 +274,197 @@
         </div>
       </section>
 
-      <!-- ============ AWWWARDS-STYLE PROJECTS ============ -->
-      <section class="case-section" id="projects">
+      <!-- ============ FEATURED PROJECT: 34devs ============ -->
+      <section class="featured-project" id="projects">
+        <div class="container">
+          <div class="featured-head reveal">
+            <span class="num">/ 01 · Founded</span>
+            <h2 data-reveal="words"><em>34devs</em> — my Shopify Plus agency.</h2>
+            <span class="badge">Featured</span>
+          </div>
+
+          <div class="featured-body">
+            <a class="featured-media" href="https://34devs.com" target="_blank" rel="noreferrer" aria-label="Visit 34devs.com">
+              <picture>
+                <source srcset="/assets/img/projects/34devs/hero-desktop.webp" type="image/webp">
+                <img src="/assets/img/projects/34devs/hero-desktop.jpg" alt="34devs.com homepage hero — We Build Shopify Experiences" loading="eager" width="1600" height="1000">
+              </picture>
+              <div class="featured-overlay">
+                <span class="chip lime">Shopify Plus Partner 2026</span>
+                <span class="chip">Live · 34devs.com</span>
+              </div>
+            </a>
+
+            <div class="featured-copy reveal">
+              <h3>Bespoke <em>Shopify Plus</em> agency for ambitious brands.</h3>
+              <p>2024'te kurdum. Custom theme'lerden custom app'lere, performans optimizasyonundan migration'a kadar Shopify Plus seviyesinde end-to-end servisler. Shopify Certified Partner, 2.1s ortalama yükleme süresi, A+ Shopify Score.</p>
+              <p>Sitenin kendisi de tipik bir 34devs çıktısı: özel typography (variable font "Shopify Experiences" treatment), performance widget, dual-CTA conversion flow, multi-product ecosystem (Client Portal, Free Audit, Tools).</p>
+
+              <div class="featured-stats">
+                <div><strong>2.1<em>s</em></strong><span>Avg page load</span></div>
+                <div><strong>A<em>+</em></strong><span>Shopify Score</span></div>
+                <div><strong>5<em>+</em></strong><span>Services live</span></div>
+                <div><strong>2026</strong><span>Shopify Partner</span></div>
+              </div>
+
+              <a class="featured-cta" href="https://34devs.com" target="_blank" rel="noreferrer" data-magnetic>
+                Visit 34devs.com <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ AWWWARDS-STYLE PROJECT GRID ============ -->
+      <section class="case-section" aria-labelledby="projects-grid-heading">
         <div class="container">
           <div class="section-heading reveal">
-            <p class="eyebrow">Seçili işler · /projects</p>
-            <h2>Production'da çalışan <em>gerçek</em> projeler.</h2>
+            <p class="eyebrow">Seçili işler · /02—07</p>
+            <h2 id="projects-grid-heading" data-reveal="words">Production'da çalışan <em>gerçek</em> projeler.</h2>
           </div>
 
           <div class="case-grid">
-            <!-- featured wide -->
-            <a class="case span-7 reveal" href="/work.html" aria-label="Shopify ↔ Plentymarkets Dropshipping case study">
+            <!-- /02 — Plentymarkets featured -->
+            <a class="case span-7 reveal" href="/case-studies/plentymarkets-dropshipping.html" aria-label="Shopify ↔ Plentymarkets Dropshipping case study">
               <div class="case-media">
-                <div class="bg"></div>
-                <span class="badge">Featured</span>
+                <div class="image">
+                  <picture>
+                    <source srcset="/assets/img/projects/stores/elyfer-desktop.webp" type="image/webp">
+                    <img src="/assets/img/projects/stores/elyfer-desktop.jpg" alt="Elyfer e-commerce storefront" loading="lazy" width="1440" height="900">
+                  </picture>
+                </div>
+                <span class="badge">Integration</span>
                 <span class="ext" aria-hidden="true">↗</span>
-                <div class="ascii" aria-hidden="true"><pre>
-  ┌──────────── SHOPIFY ────────────┐        ┌────── PLENTYMARKETS ──────┐
-  │   orders   ▸▸▸  webhook  ▸▸▸    │   ⇄    │   POST /rest/orders       │
-  │   stock    ◂◂◂  sync     ◂◂◂    │  <span class="hi">api</span>   │   GET  /rest/items        │
-  │   prices   ▸▸▸  laravel  ▸▸▸    │        │   PUT  /rest/stock        │
-  └─────────────────────────────────┘        └───────────────────────────┘
-                       <span class="hi">elfbargermany · vapor handel gmbh</span>
-                </pre></div>
               </div>
               <div class="case-meta">
                 <div>
                   <h3>Shopify ↔ Plentymarkets Dropshipping</h3>
-                  <p>Laravel · REST API · Custom CMS</p>
+                  <p>Vapor Handel GmbH · Laravel · REST API</p>
                 </div>
                 <span class="arrow" aria-hidden="true">↗</span>
               </div>
             </a>
 
-            <!-- side tall -->
-            <a class="case span-5 reveal" href="/work.html" aria-label="Mega Menu Builder app">
+            <!-- /03 — EZ Commerce 14 themes (Garisar hero) -->
+            <a class="case span-5 reveal" href="/case-studies/ezcommerce-themes.html" aria-label="14 custom Shopify themes — EZ Commerce US">
               <div class="case-media">
-                <div class="bg"></div>
+                <div class="image">
+                  <picture>
+                    <source srcset="/assets/img/projects/stores/garisar-desktop.webp" type="image/webp">
+                    <img src="/assets/img/projects/stores/garisar-desktop.jpg" alt="Garisar — premium olive oil storefront" loading="lazy" width="1440" height="900">
+                  </picture>
+                </div>
+                <span class="badge">Theme</span>
+                <span class="ext" aria-hidden="true">↗</span>
+              </div>
+              <div class="case-meta">
+                <div>
+                  <h3>Garisar — Gourmet Olive Oil</h3>
+                  <p>Custom Shopify theme · Figma → Liquid</p>
+                </div>
+                <span class="arrow" aria-hidden="true">↗</span>
+              </div>
+            </a>
+
+            <!-- /04 — Mega Menu Builder (ASCII pattern, no real ss available) -->
+            <a class="case span-4 reveal" href="/case-studies/mega-menu-builder.html" aria-label="Mega Menu Builder Shopify app">
+              <div class="case-media">
+                <div class="image" style="background: linear-gradient(135deg, var(--bg-2), #050505);">
+                  <div class="ascii" style="display:flex; align-items:center; justify-content:center; padding: 20px;" aria-hidden="true"><pre style="font-size: 10px; line-height: 1.4; color: var(--ink-soft); margin:0;">
+▼ MEGA MENU BUILDER
+┌────────────────────────────┐
+│ <span style="color:var(--lime)">●</span> Collections                │
+│ <span style="color:var(--lime)">●</span> Products                   │
+│ <span style="color:var(--lime)">●</span> Image blocks               │
+│ <span style="color:var(--lime)">●</span> Campaign tile              │
+│ <span style="color:var(--lime)">●</span> Mobile / desktop split    │
+└────────────────────────────┘
+theme app extension
+                  </pre></div>
+                </div>
                 <span class="badge">App</span>
                 <span class="ext" aria-hidden="true">↗</span>
-                <div class="ascii" aria-hidden="true"><pre>
-   ▼ MEGA MENU BUILDER
-   ┌─────────────────────────────┐
-   │ <span class="hi">●</span> Collections                │
-   │ <span class="hi">●</span> Products                   │
-   │ <span class="hi">●</span> Image blocks               │
-   │ <span class="hi">●</span> Campaign tile              │
-   │ <span class="hi">●</span> Mobile / desktop split    │
-   └─────────────────────────────┘
-   theme app extension
-                </pre></div>
               </div>
               <div class="case-meta">
                 <div>
                   <h3>Mega Menu Builder</h3>
-                  <p>Shopify App · Drag & Drop</p>
+                  <p>Shopify App · Drag &amp; Drop · Theme Ext.</p>
                 </div>
                 <span class="arrow" aria-hidden="true">↗</span>
               </div>
             </a>
 
-            <!-- mid trio -->
-            <a class="case span-4 reveal" href="/work.html" aria-label="ETAly delivery date app">
+            <!-- /05 — ETAly Delivery Date -->
+            <a class="case span-4 reveal" href="/case-studies/etaly-delivery-date.html" aria-label="ETAly delivery date Shopify app">
               <div class="case-media">
-                <div class="bg"></div>
+                <div class="image" style="background: linear-gradient(135deg, var(--bg-2), #050505);">
+                  <div class="ascii" style="display:flex; align-items:center; justify-content:center; padding: 20px;" aria-hidden="true"><pre style="font-size: 10px; line-height: 1.4; color: var(--ink-soft); margin:0;">
+ETAly · DELIVERY DATE
+┌─────────────────┐
+│ Order before    │
+│   <span style="color:var(--lime)">14:00</span>          │
+│ Get it by       │
+│   <span style="color:var(--lime)">Tue, Mar 14</span>    │
+│ DHL · 2-3 days  │
+└─────────────────┘
+checkout extensibility
+                  </pre></div>
+                </div>
                 <span class="badge">App</span>
                 <span class="ext" aria-hidden="true">↗</span>
-                <div class="ascii" aria-hidden="true"><pre>
-  ETAly · DELIVERY DATE
-  ┌─────────────────┐
-  │ Order before    │
-  │   <span class="hi">14:00</span>          │
-  │ Get it by       │
-  │   <span class="hi">Tue, Mar 14</span>    │
-  │ DHL · 2-3 days  │
-  └─────────────────┘
-                </pre></div>
               </div>
               <div class="case-meta">
                 <div>
                   <h3>ETAly · Delivery Date</h3>
-                  <p>Checkout Extensibility</p>
+                  <p>Conversion · Checkout Extensibility</p>
                 </div>
                 <span class="arrow" aria-hidden="true">↗</span>
               </div>
             </a>
 
-            <a class="case span-4 reveal" href="/work.html" aria-label="Shopify Shopware sync">
+            <!-- /06 — Shopware Sync -->
+            <a class="case span-4 reveal" href="/case-studies/shopware-sync.html" aria-label="Shopify Shopware sync integration">
               <div class="case-media">
-                <div class="bg"></div>
+                <div class="image" style="background: linear-gradient(135deg, var(--bg-2), #050505);">
+                  <div class="ascii" style="display:flex; align-items:center; justify-content:center; padding: 20px;" aria-hidden="true"><pre style="font-size: 10px; line-height: 1.4; color: var(--ink-soft); margin:0;">
+SHOPIFY  ⇄  SHOPWARE
+┌────────┐  ┌────────┐
+│  v6/v5 │  │ orders │
+│   sw   │◂▸│ items  │
+│   api  │  │ stock  │
+└────────┘  └────────┘
+bi-directional sync
+<span style="color:var(--lime)">retry · 5× · log</span>
+                  </pre></div>
+                </div>
                 <span class="badge">Integration</span>
                 <span class="ext" aria-hidden="true">↗</span>
-                <div class="ascii" aria-hidden="true"><pre>
-   SHOPIFY  ⇄  SHOPWARE
-   ┌────────┐  ┌────────┐
-   │  v6/v5 │  │ orders │
-   │   sw   │◂▸│ items  │
-   │   api  │  │ stock  │
-   └────────┘  └────────┘
-    bi-directional sync
-                </pre></div>
               </div>
               <div class="case-meta">
                 <div>
-                  <h3>Shopify ↔ Shopware</h3>
-                  <p>5 & 6 · Bi-directional</p>
+                  <h3>Shopify ↔ Shopware (5 &amp; 6)</h3>
+                  <p>Bi-directional · Adapter pattern</p>
                 </div>
                 <span class="arrow" aria-hidden="true">↗</span>
               </div>
             </a>
 
-            <a class="case span-4 reveal" href="/work.html" aria-label="Walmart marketplace integration">
+            <!-- /07 — wide: all 14 themes ribbon -->
+            <a class="case span-12 wide reveal" href="/case-studies/ezcommerce-themes.html" aria-label="14 custom Shopify themes — full list">
               <div class="case-media">
-                <div class="bg"></div>
-                <span class="badge">Integration</span>
-                <span class="ext" aria-hidden="true">↗</span>
-                <div class="ascii" aria-hidden="true"><pre>
-   WALMART MARKETPLACE
-   ┌──────────────────┐
-   │  ▸ inventory     │
-   │  ▸ pricing       │
-   │  ▸ <span class="hi">orders ◂◂◂</span>    │
-   │  ▸ rate-limit ok │
-   └──────────────────┘
-   background jobs
-                </pre></div>
-              </div>
-              <div class="case-meta">
-                <div>
-                  <h3>Walmart Marketplace</h3>
-                  <p>Sync · Orders · Pricing</p>
+                <div class="image">
+                  <picture>
+                    <source srcset="/assets/img/projects/stores/iegreentea-desktop.webp" type="image/webp">
+                    <img src="/assets/img/projects/stores/iegreentea-desktop.jpg" alt="IE Green Tea — one of 14 Shopify themes delivered" loading="lazy" width="1440" height="900">
+                  </picture>
                 </div>
-                <span class="arrow" aria-hidden="true">↗</span>
-              </div>
-            </a>
-
-            <!-- wide bottom -->
-            <a class="case span-12 wide reveal" href="/work.html" aria-label="14 custom Shopify themes">
-              <div class="case-media">
-                <div class="bg"></div>
-                <span class="badge">Themes</span>
+                <span class="badge">14 themes</span>
                 <span class="ext" aria-hidden="true">↗</span>
-                <div class="ascii" aria-hidden="true"><pre>
-  ┌─ FIGMA ──────────────┐    ▸▸▸    ┌─ SHOPIFY THEME ──────────────────────────────┐
-  │  sections + tokens   │           │  Online Store 2.0 · sections · metafields    │
-  │  pixel-perfect spec  │   build   │  liquid · responsive · CWV-tuned · admin-edit │
-  └──────────────────────┘    ▸▸▸    └──────────────────────────────────────────────┘
-
-  <span class="hi">14 stores</span>  ·  garisar  ·  bayelon  ·  glinetex  ·  tinycircuits  ·  zunaeyewear  ·  royalhousegarden
-              primecom  ·  peraprint  ·  disartrade  ·  gogoviecarrier  ·  iegreentea  ·  elyfer  ·  buyable  ·  sarahscandyfactory
-                </pre></div>
               </div>
               <div class="case-meta">
                 <div>
-                  <h3>14 Custom Shopify Themes (Figma → Liquid)</h3>
-                  <p>EZ Commerce US · Pixel-perfect</p>
+                  <h3>14 Custom Shopify Themes — Figma → Liquid</h3>
+                  <p>EZ Commerce US · garisar · bayelon · glinetex · tinycircuits · zunaeyewear · royalhousegarden · primecom · peraprint · disartrade · gogoviecarrier · iegreentea · elyfer · buyable · sarahscandyfactory</p>
                 </div>
                 <span class="arrow" aria-hidden="true">↗</span>
               </div>
@@ -436,7 +472,7 @@
           </div>
 
           <div style="margin-top: 40px; text-align: center;" class="reveal">
-            <a class="button button-secondary" href="/work.html">Tüm projeleri gör ↗</a>
+            <a class="button button-secondary" href="/work.html" data-magnetic>Tüm projeleri gör ↗</a>
           </div>
         </div>
       </section>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopify ↔ Plentymarkets Dropshipping — Case Study | Ahmet Hamdi Kilic</title>
+    <meta name="description" content="Vapor Handel GmbH için Elfbargermany dropshipping integration. Laravel back-end, end-to-end order sync, custom CMS dashboard.">
+    <link rel="canonical" href="https://ahmethamdikilic.com/case-studies/plentymarkets-dropshipping.html">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Shopify ↔ Plentymarkets Dropshipping — Case Study">
+    <meta property="og:description" content="Laravel-based bi-directional sync. Elfbargermany / Vapor Handel GmbH.">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/"><span class="brand-mark">A</span><span>AHK / 34devs</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Menü</span></button>
+        <div class="nav-wrap" data-nav-wrap>
+          <nav class="site-nav" id="site-nav">
+            <a href="/about.html">Hakkımda</a>
+            <a href="/services.html">Hizmetler</a>
+            <a href="/work.html">Projeler</a>
+            <a href="/contact.html">İletişim</a>
+          </nav>
+          <div class="lang-switch"><a class="active" href="/case-studies/plentymarkets-dropshipping.html">TR</a><a href="/en/case-studies/plentymarkets-dropshipping.html">EN</a><a href="/de/case-studies/plentymarkets-dropshipping.html">DE</a></div>
+          <a class="header-cta" href="/contact.html" data-magnetic>Launch</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="case-page">
+
+      <section class="case-hero">
+        <div class="container">
+          <div class="case-breadcrumb reveal">
+            <a href="/">Home</a><span class="sep">/</span>
+            <a href="/work.html">Work</a><span class="sep">/</span>
+            <span>Plentymarkets Sync</span>
+          </div>
+          <p class="eyebrow reveal">/ 02 · Integration — Dropshipping Sync</p>
+          <h1 class="case-title reveal" data-reveal="words">Shopify ↔ Plentymarkets, <em>fully automated.</em></h1>
+          <p class="case-tagline reveal">Vapor Handel GmbH için <strong>Elfbargermany</strong> dropshipping operasyonunu otomatikleştiren Laravel-based integration. Sipariş geldikçe Plentymarkets'a iletilir, stok ve fiyat geri çekilir, custom CMS üzerinden tüm akış izlenebilir.</p>
+
+          <dl class="case-meta-grid reveal">
+            <div><dt>Client</dt><dd>Vapor Handel GmbH</dd></div>
+            <div><dt>Year</dt><dd>2024 — <em>now</em></dd></div>
+            <div><dt>Stack</dt><dd>Laravel · REST · MySQL</dd></div>
+            <div><dt>Role</dt><dd>Senior Integration Dev</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="case-section-block">
+        <div class="container">
+          <div class="label reveal">Problem</div>
+          <div class="body reveal">
+            <h2>Manuel sipariş aktarımı, ölçeklenemeyen operasyon.</h2>
+            <p>Elfbargermany Shopify'da satış yapıyor, ama fulfillment Plentymarkets üzerinden işliyor. Her sipariş için <strong>ürün eşleştirme + stok kontrolü + manuel data entry</strong> gerekiyordu. Günde 100+ sipariş olduğunda bu artık sürdürülemez — hatalar artıyor, müşteri geri bildirimleri düşüyor, ekip yoruluyordu.</p>
+            <p>Çözüm: <strong>otomatik bi-directional sync</strong>. Ama Shopify ve Plentymarkets'ın veri modelleri farklı — variant, location, taxation ve fulfillment alanlarında her biri kendi gerçekliğine sahip.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section-block">
+        <div class="container">
+          <div class="label reveal">Solution</div>
+          <div class="body reveal">
+            <h2>Laravel-based middleware + custom CMS dashboard.</h2>
+            <p>Stack: <code>Laravel · MySQL · jQuery · Postman · Git</code>. Mimari üç katmanlı:</p>
+            <ul class="case-features">
+              <li><strong>Webhook receiver</strong> — Shopify order/created webhook'unu yakalar, queue'ya yazar</li>
+              <li><strong>Mapper</strong> — Shopify variant → Plenty item, address normalize, taxation logic</li>
+              <li><strong>Submitter</strong> — Plentymarkets REST'e POST /orders, retry strateji ile</li>
+              <li><strong>Stock puller</strong> — Plenty'den her saat stok çeker, Shopify'da günceller</li>
+              <li><strong>Custom CMS</strong> — tüm akışı izleyen dashboard: bekleyen, hatalı, başarılı siparişler + tek tıkla retry</li>
+              <li><strong>Security layer</strong> — webhook signature verify, IP allowlist, role-based dashboard access</li>
+            </ul>
+            <p>Hataların kaybolmaması için her step <code>events</code> tablosuna log düşer. Retry mekanizması exponential backoff'la 5 deneme yapar, başarısız olursa Slack alert atar.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-results">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Stack</p>
+            <h3 style="font-family:var(--serif); font-size:24px; margin: 12px 0 24px;">PHP · Laravel · MySQL</h3>
+            <ul class="case-features" style="border-top: 1px solid var(--border);">
+              <li>Laravel 10 · Queue + Horizon</li>
+              <li>MySQL 8 · indexed event log</li>
+              <li>Shopify Admin API (REST + webhooks)</li>
+              <li>Plentymarkets REST API</li>
+              <li>jQuery + Ajax for CMS dashboard</li>
+              <li>Postman collection for QA</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <p class="eyebrow">Outcomes</p>
+            <h3 style="font-family:var(--serif); font-size:24px; margin: 12px 0 24px;">Manuel iş sıfıra indi.</h3>
+            <div class="results-grid">
+              <div><strong>100<em>%</em></strong><span>Auto order sync</span></div>
+              <div><strong>&lt; 10<em>s</em></strong><span>Order → Plenty</span></div>
+              <div><strong>5×</strong><span>Retry on failure</span></div>
+              <div><strong>0</strong><span>Manuel data entry</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <div class="container">
+          <p class="eyebrow">Sonraki proje</p>
+          <h2><em>Mega Menu Builder</em> · Shopify App.</h2>
+          <p>/ 03 · Custom App · Theme App Extension</p>
+          <a class="button button-primary" href="/case-studies/mega-menu-builder.html" data-magnetic>Devam et ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="brand-block"><strong>Ahmet Hamdi Kilic</strong><p>Senior Shopify & E-Commerce Developer. 34devs founder.</p></div>
+        <div><h4>Sayfalar</h4><ul><li><a href="/about.html">Hakkımda</a></li><li><a href="/services.html">Hizmetler</a></li><li><a href="/work.html">Projeler</a></li><li><a href="/contact.html">İletişim</a></li></ul></div>
+        <div><h4>Stack</h4><ul><li>Shopify Liquid</li><li>Storefront / Admin API</li><li>Node · Laravel · PHP</li><li>Plentymarkets · Shopware</li></ul></div>
+        <div><h4>Bağlantı</h4><ul><li><a href="mailto:ahmethamdikilic@outlook.de">ahmethamdikilic@outlook.de</a></li><li><a href="https://github.com/ahmethamdi">github</a></li><li><a href="https://www.linkedin.com/in/ahmet-hamdi-kilic">linkedin</a></li></ul></div>
+      </div>
+      <div class="container footer-bottom"><span>© 2026 Ahmet Hamdi Kilic · 34devs</span><span>v2.3</span></div>
+    </footer>
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>
