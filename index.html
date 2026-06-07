@@ -68,6 +68,62 @@
     <main id="main">
 
       <!-- ================================================================
+           PRISMA-STYLE HERO · video bg + oversized name + side CTA
+           ================================================================ -->
+      <section class="prisma-hero" aria-label="Hero">
+        <div class="prisma-frame">
+
+          <!-- Background video (autoplay, muted, looped) -->
+          <video autoplay loop muted playsinline preload="auto" aria-hidden="true">
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4" type="video/mp4">
+          </video>
+
+          <!-- Noise overlay -->
+          <div class="prisma-noise" aria-hidden="true"></div>
+          <!-- Gradient overlay -->
+          <div class="prisma-gradient" aria-hidden="true"></div>
+
+          <!-- Center pill nav (Prisma signature) -->
+          <nav class="prisma-nav" aria-label="Quick links">
+            <div class="prisma-nav-pill">
+              <a href="/about.html">Hakkımda</a>
+              <a href="/services.html">Hizmetler</a>
+              <a href="/work.html">Projeler</a>
+              <a href="#work">Case studies</a>
+              <a href="/contact.html">İletişim</a>
+            </div>
+          </nav>
+
+          <!-- Hero content (bottom) -->
+          <div class="prisma-content">
+            <div class="prisma-grid">
+              <div class="prisma-name">
+                <h1>
+                  <span data-words-pull-up data-asterisk>Ahmet Hamdi Kilic</span>
+                </h1>
+              </div>
+
+              <div class="prisma-aside">
+                <p class="prisma-lead" data-prisma-anim data-delay="500">
+                  Senior Shopify &amp; E-Commerce Developer based in Korschenbroich, Germany. Custom themes, Shopify apps, marketplace integrations &mdash; built end-to-end on the same Liquid + API foundation.
+                </p>
+
+                <a class="prisma-cta" href="/contact.html" data-prisma-anim data-delay="700">
+                  Hire me
+                  <span class="arrow-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
            THE STORY · pinned hero + 5 scenes + 3D bag
            Total scroll length = 500vh (5 × 100vh)
            ================================================================ -->
@@ -326,6 +382,8 @@
       </div>
     </footer>
 
+    <!-- Prisma hero WordsPullUp animation -->
+    <script src="/assets/js/prisma-hero.js" defer></script>
     <!-- Apple-style scroll story scripts -->
     <script src="/assets/js/vendor/lenis.min.js"></script>
     <script type="module" src="/assets/js/story.js"></script>

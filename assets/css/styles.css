@@ -2833,3 +2833,244 @@ html.lenis { height: auto; }
   .story-progress { display: none; }
 }
 
+
+/* =========================================================================
+   v4.1 — PRISMA-STYLE HERO (vanilla port of the prisma-hero.tsx component)
+   Full-bleed video bg + noise overlay + center navbar pill + oversized name
+   ========================================================================= */
+
+/* Prisma hero — full viewport, rounded video frame */
+.prisma-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  padding: 0;
+  /* override sticky header for this hero — header floats over the rounded frame */
+  margin-top: calc(var(--header-h) * -1);
+  padding-top: var(--header-h);
+}
+
+.prisma-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+@media (min-width: 768px) {
+  .prisma-frame { border-radius: 32px; }
+}
+
+/* Video background */
+.prisma-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+
+/* Noise overlay */
+.prisma-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.7;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.88 0 0 0 0 0.88 0 0 0 0 0.8 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Gradient overlay (top-dark / center-clear / bottom-dark) */
+.prisma-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 30%, transparent 60%, rgba(0,0,0,0.6) 100%);
+}
+
+/* Navbar pill — centered, hangs from the top of the frame */
+.prisma-nav {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.prisma-nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #000;
+  padding: 8px 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+@media (min-width: 640px) { .prisma-nav-pill { gap: 24px; } }
+@media (min-width: 768px) { .prisma-nav-pill { gap: 48px; padding: 8px 32px; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; } }
+@media (min-width: 1024px) { .prisma-nav-pill { gap: 56px; } }
+
+.prisma-nav-pill a {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  color: rgba(225, 224, 204, 0.8);
+  text-transform: none;
+  transition: color .2s var(--ease);
+}
+.prisma-nav-pill a:hover,
+.prisma-nav-pill a.is-active { color: #E1E0CC; }
+
+@media (min-width: 640px) { .prisma-nav-pill a { font-size: 12px; } }
+@media (min-width: 768px) { .prisma-nav-pill a { font-size: 14px; } }
+
+/* Hero content (bottom of frame) */
+.prisma-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  padding: 0 16px 8px;
+}
+@media (min-width: 640px) { .prisma-content { padding-left: 24px; padding-right: 24px; } }
+@media (min-width: 768px) { .prisma-content { padding-left: 40px; padding-right: 40px; } }
+
+.prisma-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+.prisma-name {
+  grid-column: span 12;
+}
+@media (min-width: 1024px) {
+  .prisma-name { grid-column: span 8; }
+}
+
+.prisma-name h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-style: normal;
+  line-height: 0.85;
+  letter-spacing: -0.07em;
+  color: #E1E0CC;
+  margin: 0;
+  /* responsive massive type */
+  font-size: 26vw;
+}
+@media (min-width: 640px) { .prisma-name h1 { font-size: 24vw; } }
+@media (min-width: 768px) { .prisma-name h1 { font-size: 22vw; } }
+@media (min-width: 1024px) { .prisma-name h1 { font-size: 20vw; } }
+@media (min-width: 1280px) { .prisma-name h1 { font-size: 19vw; } }
+@media (min-width: 1536px) { .prisma-name h1 { font-size: 20vw; } }
+
+/* asterisk superscript on the last word */
+.prisma-name .asterisk {
+  position: relative;
+  top: -0.55em;
+  font-size: 0.31em;
+  margin-left: 0.05em;
+  display: inline-block;
+}
+
+/* Right column: lead + CTA */
+.prisma-aside {
+  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 24px;
+}
+@media (min-width: 1024px) {
+  .prisma-aside { grid-column: span 4; padding-bottom: 40px; }
+}
+
+.prisma-lead {
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.3;
+  color: rgba(225, 224, 204, 0.7);
+  margin: 0;
+}
+@media (min-width: 640px) { .prisma-lead { font-size: 14px; } }
+@media (min-width: 768px) { .prisma-lead { font-size: 16px; } }
+
+/* CTA pill — light bg, dark inner arrow circle */
+.prisma-cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E1E0CC;
+  color: #000;
+  padding: 4px 4px 4px 20px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  transition: gap .3s var(--ease);
+  text-decoration: none;
+}
+.prisma-cta:hover { gap: 12px; }
+@media (min-width: 640px) { .prisma-cta { font-size: 16px; } }
+
+.prisma-cta .arrow-circle {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #000;
+  color: #E1E0CC;
+  transition: transform .3s var(--ease);
+}
+.prisma-cta:hover .arrow-circle { transform: scale(1.1); }
+@media (min-width: 640px) { .prisma-cta .arrow-circle { width: 40px; height: 40px; } }
+
+.prisma-cta .arrow-circle svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* WordsPullUp / line entry animation */
+.prisma-name .word,
+.prisma-lead.is-anim,
+.prisma-cta.is-anim {
+  opacity: 0;
+  transform: translateY(20px);
+  display: inline-block;
+}
+.prisma-name .word { margin-right: 0.25em; }
+.prisma-name .word:last-child { margin-right: 0; }
+.prisma-name .word.is-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity .6s cubic-bezier(0.16, 1, 0.3, 1), transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.prisma-lead.is-in,
+.prisma-cta.is-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity .8s cubic-bezier(0.16, 1, 0.3, 1), transform .8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prisma-name .word,
+  .prisma-lead,
+  .prisma-cta {
+    opacity: 1;
+    transform: none;
+  }
+}
+
