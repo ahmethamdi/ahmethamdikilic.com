@@ -2966,14 +2966,9 @@ html.lenis { height: auto; }
   letter-spacing: -0.07em;
   color: #E1E0CC;
   margin: 0;
-  /* responsive massive type */
-  font-size: 26vw;
+  /* compact display type — single line on most screens */
+  font-size: 6vw;
 }
-@media (min-width: 640px) { .prisma-name h1 { font-size: 24vw; } }
-@media (min-width: 768px) { .prisma-name h1 { font-size: 22vw; } }
-@media (min-width: 1024px) { .prisma-name h1 { font-size: 20vw; } }
-@media (min-width: 1280px) { .prisma-name h1 { font-size: 19vw; } }
-@media (min-width: 1536px) { .prisma-name h1 { font-size: 20vw; } }
 
 /* asterisk superscript on the last word */
 .prisma-name .asterisk {
@@ -3072,5 +3067,101 @@ html.lenis { height: auto; }
     opacity: 1;
     transform: none;
   }
+}
+
+
+/* =========================================================================
+   v4.2 — Prisma-style sub-page hero (for about/services/work/contact)
+   Compact version: dark frame, cream serif title, pill nav inherited
+   ========================================================================= */
+
+.prisma-page-hero {
+  position: relative;
+  margin: calc(var(--header-h) * -1) 0 0;
+  padding-top: var(--header-h);
+  background: #0a0a0a;
+}
+
+.prisma-page-frame {
+  position: relative;
+  margin: 8px;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 60vh;
+  padding: 80px 24px 60px;
+  background: linear-gradient(180deg, #0e0e0e 0%, #050505 100%);
+}
+@media (min-width: 768px) {
+  .prisma-page-frame {
+    margin: 16px;
+    border-radius: 32px;
+    padding: 120px 48px 80px;
+    min-height: 70vh;
+  }
+}
+
+.prisma-page-frame .prisma-noise {
+  opacity: 0.4;
+}
+
+.prisma-page-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(225, 224, 204, 0.55);
+  margin: 0 0 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.prisma-page-eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: rgba(225, 224, 204, 0.4);
+}
+
+.prisma-page-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: #E1E0CC;
+  margin: 0 0 32px;
+  max-width: 18ch;
+}
+.prisma-page-title em,
+.prisma-page-title .accent {
+  font-style: italic;
+  color: var(--lime);
+  font-weight: 400;
+}
+
+.prisma-page-lead {
+  font-family: var(--sans);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.55;
+  color: rgba(225, 224, 204, 0.72);
+  max-width: 56ch;
+  margin: 0;
+}
+
+.prisma-page-meta {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 36px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(225, 224, 204, 0.55);
+}
+.prisma-page-meta span::before {
+  content: "● ";
+  color: var(--lime);
 }
 
